@@ -182,4 +182,8 @@ with gr.Blocks() as demo:
     )
 
 
-demo.launch(debug=True)
+# Run the interface
+if __name__ == "__main__":
+    demo = setup_gradio_interface()
+    port = int(os.environ.get("PORT", 7860))
+    demo.launch(server_name="0.0.0.0", server_port=port)
